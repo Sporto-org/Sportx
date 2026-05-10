@@ -4,8 +4,9 @@
         <attribute name="badge" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sportName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="LeagueDBEntity" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="LeagueDBEntity" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>
