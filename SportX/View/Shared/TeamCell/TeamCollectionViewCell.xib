@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TeamCell" id="tc-cell" customClass="TeamCollectionViewCell" customModule="SportX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tc-content">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc-container">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
+                        <subviews>
+                            <!-- Team Logo (circular, 70x70) -->
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tc-image">
+                                <rect key="frame" x="25" y="16" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="tc-imgw"/>
+                                    <constraint firstAttribute="height" constant="70" id="tc-imgh"/>
+                                </constraints>
+                            </imageView>
+                            <!-- Team Name Label -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Team" textAlignment="center" numberOfLines="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tc-label">
+                                <rect key="frame" x="8" y="98" width="104" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <!-- Image: centered horizontally, top + 16 -->
+                            <constraint firstItem="tc-image" firstAttribute="centerX" secondItem="tc-container" secondAttribute="centerX" id="tc-imgcx"/>
+                            <constraint firstItem="tc-image" firstAttribute="top" secondItem="tc-container" secondAttribute="top" constant="16" id="tc-imgtop"/>
+                            <!-- Label: top to image bottom + 12, leading/trailing + 8 -->
+                            <constraint firstItem="tc-label" firstAttribute="top" secondItem="tc-image" secondAttribute="bottom" constant="12" id="tc-lbltop"/>
+                            <constraint firstItem="tc-label" firstAttribute="leading" secondItem="tc-container" secondAttribute="leading" constant="8" id="tc-lbllead"/>
+                            <constraint firstItem="tc-container" firstAttribute="trailing" secondItem="tc-label" secondAttribute="trailing" constant="8" id="tc-lbltrail"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tc-container" firstAttribute="top" secondItem="tc-content" secondAttribute="top" id="tc-ctop"/>
+                    <constraint firstItem="tc-container" firstAttribute="leading" secondItem="tc-content" secondAttribute="leading" id="tc-clead"/>
+                    <constraint firstItem="tc-content" firstAttribute="trailing" secondItem="tc-container" secondAttribute="trailing" id="tc-ctrail"/>
+                    <constraint firstItem="tc-content" firstAttribute="bottom" secondItem="tc-container" secondAttribute="bottom" id="tc-cbot"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="tc-container" id="tc-c1"/>
+                <outlet property="teamImageView" destination="tc-image" id="tc-c2"/>
+                <outlet property="teamNameLabel" destination="tc-label" id="tc-c3"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="71"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

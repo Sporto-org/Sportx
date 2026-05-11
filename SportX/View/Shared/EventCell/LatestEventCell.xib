@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LatestEventCell" id="le-cell" customClass="LatestEventCell" customModule="SportX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="le-content">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="le-container">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
+                        <subviews>
+                            <!-- Home Team Image (left side) -->
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="le-home-img">
+                                <rect key="frame" x="30" y="16" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="le-himgw"/>
+                                    <constraint firstAttribute="height" constant="50" id="le-himgh"/>
+                                </constraints>
+                            </imageView>
+                            <!-- Score Label (center, bold) -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2 - 1" textAlignment="center" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le-score">
+                                <rect key="frame" x="150" y="26" width="90" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                            </label>
+                            <!-- Away Team Image (right side) -->
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="le-away-img">
+                                <rect key="frame" x="310" y="16" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="le-aimgw"/>
+                                    <constraint firstAttribute="height" constant="50" id="le-aimgh"/>
+                                </constraints>
+                            </imageView>
+                            <!-- Home Team Name (below home image) -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Home" textAlignment="center" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le-home-lbl">
+                                <rect key="frame" x="10" y="74" width="90" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                            </label>
+                            <!-- Away Team Name (below away image) -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Away" textAlignment="center" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le-away-lbl">
+                                <rect key="frame" x="290" y="74" width="90" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                            </label>
+                            <!-- Date Label (bottom center) -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2026-05-10" textAlignment="center" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le-date">
+                                <rect key="frame" x="120" y="60" width="150" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <!-- Home image: left area, vertically offset from top -->
+                            <constraint firstItem="le-home-img" firstAttribute="centerX" secondItem="le-container" secondAttribute="leading" constant="55" id="le-himgcx"/>
+                            <constraint firstItem="le-home-img" firstAttribute="top" secondItem="le-container" secondAttribute="top" constant="16" id="le-himgtop"/>
+                            <!-- Score: centered horizontally, centerY with home image -->
+                            <constraint firstItem="le-score" firstAttribute="centerX" secondItem="le-container" secondAttribute="centerX" id="le-scx"/>
+                            <constraint firstItem="le-score" firstAttribute="centerY" secondItem="le-home-img" secondAttribute="centerY" id="le-scy"/>
+                            <!-- Away image: right area, top aligned with home -->
+                            <constraint firstItem="le-away-img" firstAttribute="centerX" secondItem="le-container" secondAttribute="trailing" constant="-55" id="le-aimgcx"/>
+                            <constraint firstItem="le-away-img" firstAttribute="top" secondItem="le-container" secondAttribute="top" constant="16" id="le-aimgtop"/>
+                            <!-- Home label: below home image, centered under it -->
+                            <constraint firstItem="le-home-lbl" firstAttribute="top" secondItem="le-home-img" secondAttribute="bottom" constant="8" id="le-hlbltop"/>
+                            <constraint firstItem="le-home-lbl" firstAttribute="centerX" secondItem="le-home-img" secondAttribute="centerX" id="le-hlblcx"/>
+                            <constraint firstItem="le-home-lbl" firstAttribute="width" constant="90" id="le-hlblw"/>
+                            <!-- Away label: below away image, centered under it -->
+                            <constraint firstItem="le-away-lbl" firstAttribute="top" secondItem="le-away-img" secondAttribute="bottom" constant="8" id="le-albltop"/>
+                            <constraint firstItem="le-away-lbl" firstAttribute="centerX" secondItem="le-away-img" secondAttribute="centerX" id="le-alblcx"/>
+                            <constraint firstItem="le-away-lbl" firstAttribute="width" constant="90" id="le-alblw"/>
+                            <!-- Date: below score, centered -->
+                            <constraint firstItem="le-date" firstAttribute="top" secondItem="le-score" secondAttribute="bottom" constant="4" id="le-datetop"/>
+                            <constraint firstItem="le-date" firstAttribute="centerX" secondItem="le-container" secondAttribute="centerX" id="le-datecx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="le-container" firstAttribute="top" secondItem="le-content" secondAttribute="top" id="le-ctop"/>
+                    <constraint firstItem="le-container" firstAttribute="leading" secondItem="le-content" secondAttribute="leading" id="le-clead"/>
+                    <constraint firstItem="le-content" firstAttribute="trailing" secondItem="le-container" secondAttribute="trailing" id="le-ctrail"/>
+                    <constraint firstItem="le-content" firstAttribute="bottom" secondItem="le-container" secondAttribute="bottom" id="le-cbot"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="le-container" id="le-c1"/>
+                <outlet property="homeTeamImageView" destination="le-home-img" id="le-c2"/>
+                <outlet property="awayTeamImageView" destination="le-away-img" id="le-c3"/>
+                <outlet property="homeTeamLabel" destination="le-home-lbl" id="le-c4"/>
+                <outlet property="awayTeamLabel" destination="le-away-lbl" id="le-c5"/>
+                <outlet property="scoreLabel" destination="le-score" id="le-c6"/>
+                <outlet property="dateLabel" destination="le-date" id="le-c7"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="71"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.6" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

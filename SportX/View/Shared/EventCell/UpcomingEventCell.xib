@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UpcomingEventCell" id="ue-cell" customClass="UpcomingEventCell" customModule="SportX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ue-content">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ue-container">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2026-05-10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ue-date">
+                                <rect key="frame" x="8" y="10" width="264" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="20:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ue-time">
+                                <rect key="frame" x="8" y="28" width="264" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ue-home-img">
+                                <rect key="frame" x="30" y="52" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ue-himgw"/>
+                                    <constraint firstAttribute="height" constant="50" id="ue-himgh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="VS" textAlignment="center" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ue-vs">
+                                <rect key="frame" x="120" y="65" width="40" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ue-away-img">
+                                <rect key="frame" x="200" y="52" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ue-aimgw"/>
+                                    <constraint firstAttribute="height" constant="50" id="ue-aimgh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Home" textAlignment="center" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ue-home-lbl">
+                                <rect key="frame" x="10" y="110" width="90" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Away" textAlignment="center" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ue-away-lbl">
+                                <rect key="frame" x="180" y="110" width="90" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ue-date" firstAttribute="top" secondItem="ue-container" secondAttribute="top" constant="10" id="ue-dtop"/>
+                            <constraint firstItem="ue-date" firstAttribute="leading" secondItem="ue-container" secondAttribute="leading" constant="8" id="ue-dlead"/>
+                            <constraint firstItem="ue-container" firstAttribute="trailing" secondItem="ue-date" secondAttribute="trailing" constant="8" id="ue-dtrail"/>
+                            <constraint firstItem="ue-time" firstAttribute="top" secondItem="ue-date" secondAttribute="bottom" constant="4" id="ue-ttop"/>
+                            <constraint firstItem="ue-time" firstAttribute="leading" secondItem="ue-container" secondAttribute="leading" constant="8" id="ue-tlead"/>
+                            <constraint firstItem="ue-container" firstAttribute="trailing" secondItem="ue-time" secondAttribute="trailing" constant="8" id="ue-ttrail"/>
+                            <constraint firstItem="ue-home-img" firstAttribute="centerX" secondItem="ue-container" secondAttribute="leading" constant="55" id="ue-himgcx"/>
+                            <constraint firstItem="ue-home-img" firstAttribute="top" secondItem="ue-time" secondAttribute="bottom" constant="10" id="ue-himgtop"/>
+                            <constraint firstItem="ue-vs" firstAttribute="centerX" secondItem="ue-container" secondAttribute="centerX" id="ue-vscx"/>
+                            <constraint firstItem="ue-vs" firstAttribute="centerY" secondItem="ue-home-img" secondAttribute="centerY" id="ue-vscy"/>
+                            <constraint firstItem="ue-away-img" firstAttribute="centerX" secondItem="ue-container" secondAttribute="trailing" constant="-55" id="ue-aimgcx"/>
+                            <constraint firstItem="ue-away-img" firstAttribute="top" secondItem="ue-time" secondAttribute="bottom" constant="10" id="ue-aimgtop"/>
+                            <constraint firstItem="ue-home-lbl" firstAttribute="top" secondItem="ue-home-img" secondAttribute="bottom" constant="8" id="ue-hlbltop"/>
+                            <constraint firstItem="ue-home-lbl" firstAttribute="centerX" secondItem="ue-home-img" secondAttribute="centerX" id="ue-hlblcx"/>
+                            <constraint firstItem="ue-home-lbl" firstAttribute="width" constant="90" id="ue-hlblw"/>
+                            <constraint firstItem="ue-away-lbl" firstAttribute="top" secondItem="ue-away-img" secondAttribute="bottom" constant="8" id="ue-albltop"/>
+                            <constraint firstItem="ue-away-lbl" firstAttribute="centerX" secondItem="ue-away-img" secondAttribute="centerX" id="ue-alblcx"/>
+                            <constraint firstItem="ue-away-lbl" firstAttribute="width" constant="90" id="ue-alblw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ue-container" firstAttribute="top" secondItem="ue-content" secondAttribute="top" id="ue-ctop"/>
+                    <constraint firstItem="ue-container" firstAttribute="leading" secondItem="ue-content" secondAttribute="leading" id="ue-clead"/>
+                    <constraint firstItem="ue-content" firstAttribute="trailing" secondItem="ue-container" secondAttribute="trailing" id="ue-ctrail"/>
+                    <constraint firstItem="ue-content" firstAttribute="bottom" secondItem="ue-container" secondAttribute="bottom" id="ue-cbot"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="ue-container" id="ue-c1"/>
+                <outlet property="homeTeamImageView" destination="ue-home-img" id="ue-c2"/>
+                <outlet property="awayTeamImageView" destination="ue-away-img" id="ue-c3"/>
+                <outlet property="homeTeamLabel" destination="ue-home-lbl" id="ue-c4"/>
+                <outlet property="awayTeamLabel" destination="ue-away-lbl" id="ue-c5"/>
+                <outlet property="dateLabel" destination="ue-date" id="ue-c6"/>
+                <outlet property="timeLabel" destination="ue-time" id="ue-c7"/>
+                <outlet property="vsLabel" destination="ue-vs" id="ue-c8"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="71"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.6" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
+
