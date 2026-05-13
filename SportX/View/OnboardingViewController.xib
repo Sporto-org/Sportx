@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="SportX" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="ob-root" id="ob-view-conn"/>
+                <outlet property="collectionView" destination="ob-cv" id="ob-cv-conn"/>
+                <outlet property="pageControl" destination="ob-pc" id="ob-pc-conn"/>
+                <outlet property="nextButton" destination="ob-next" id="ob-next-conn"/>
+                <outlet property="skipButton" destination="ob-skip" id="ob-skip-conn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ob-root">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <!-- Skip Button (top-right) -->
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ob-skip">
+                    <rect key="frame" x="340" y="52" width="58" height="34"/>
+                    <state key="normal" title="Skip"/>
+                    <connections>
+                        <action selector="skipTapped:" destination="-1" eventType="touchUpInside" id="ob-skip-act"/>
+                    </connections>
+                </button>
+                <!-- Collection View (pages) -->
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ob-cv">
+                    <rect key="frame" x="0.0" y="86" width="414" height="640"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0" minimumInteritemSpacing="10" id="ob-flow">
+                        <size key="itemSize" width="414" height="640"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <!-- Page Control -->
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ob-pc">
+                    <rect key="frame" x="177" y="746" width="60" height="20"/>
+                </pageControl>
+                <!-- Next / Get Started Button -->
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ob-next">
+                    <rect key="frame" x="107" y="796" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="ob-next-w"/>
+                        <constraint firstAttribute="height" constant="50" id="ob-next-h"/>
+                    </constraints>
+                    <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextTapped:" destination="-1" eventType="touchUpInside" id="ob-next-act"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ob-safe"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <!-- Skip: top-right of safe area -->
+                <constraint firstItem="ob-skip" firstAttribute="top" secondItem="ob-safe" secondAttribute="top" constant="8" id="ob-skip-top"/>
+                <constraint firstItem="ob-safe" firstAttribute="trailing" secondItem="ob-skip" secondAttribute="trailing" constant="16" id="ob-skip-trail"/>
+                <!-- CollectionView: below skip, above page control -->
+                <constraint firstItem="ob-cv" firstAttribute="top" secondItem="ob-skip" secondAttribute="bottom" constant="0" id="ob-cv-top"/>
+                <constraint firstItem="ob-cv" firstAttribute="leading" secondItem="ob-root" secondAttribute="leading" id="ob-cv-lead"/>
+                <constraint firstItem="ob-root" firstAttribute="trailing" secondItem="ob-cv" secondAttribute="trailing" id="ob-cv-trail"/>
+                <constraint firstItem="ob-pc" firstAttribute="top" secondItem="ob-cv" secondAttribute="bottom" constant="20" id="ob-cv-bot"/>
+                <!-- Page Control: centered, above next button -->
+                <constraint firstItem="ob-pc" firstAttribute="centerX" secondItem="ob-root" secondAttribute="centerX" id="ob-pc-cx"/>
+                <constraint firstItem="ob-next" firstAttribute="top" secondItem="ob-pc" secondAttribute="bottom" constant="24" id="ob-pc-bot"/>
+                <!-- Next Button: centered, bottom -->
+                <constraint firstItem="ob-next" firstAttribute="centerX" secondItem="ob-root" secondAttribute="centerX" id="ob-next-cx"/>
+                <constraint firstItem="ob-safe" firstAttribute="bottom" secondItem="ob-next" secondAttribute="bottom" constant="40" id="ob-next-bot"/>
+            </constraints>
+            <point key="canvasLocation" x="-1321" y="37"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

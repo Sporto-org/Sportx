@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="main-tab-bar">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller (Initial)-->
+        <scene sceneID="tab-bar-scene">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" id="main-tab-bar" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="main-tab-bar-bar">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="sports-nav" kind="relationship" relationship="viewControllers" id="tab-seg-sports"/>
+                        <segue destination="fav-nav" kind="relationship" relationship="viewControllers" id="tab-seg-fav"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tab-first-resp" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200" y="56"/>
+        </scene>
+
+        <!--Sports Navigation Controller-->
+        <scene sceneID="sports-nav-scene">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sports-nav" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sports" image="trophy" catalog="system" selectedImage="trophy.fill" id="sports-tab-item"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sports-nav-bar">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sports-vc" kind="relationship" relationship="rootViewController" id="sports-nav-root"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sports-nav-fr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="-200"/>
+        </scene>
+
+        <!--Sports View Controller-->
+        <scene sceneID="sports-vc-scene">
+            <objects>
+                <viewController storyboardIdentifier="SportsViewController" id="sports-vc" customClass="SportsViewController" customModule="SportX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sports-vc-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sports-vc-safe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sports" id="sports-nav-item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sports-vc-fr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="-200"/>
+        </scene>
+
+        <!--Favourites Navigation Controller-->
+        <scene sceneID="fav-nav-scene">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fav-nav" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourites" image="heart" catalog="system" selectedImage="heart.fill" id="fav-tab-item"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fav-nav-bar">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fav-vc" kind="relationship" relationship="rootViewController" id="fav-nav-root"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fav-nav-fr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="300"/>
+        </scene>
+
+        <!--Favourites View Controller-->
+        <scene sceneID="fav-vc-scene">
+            <objects>
+                <viewController storyboardIdentifier="FavouritesViewController" id="fav-vc" customClass="FavouritesViewController" customModule="SportX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fav-vc-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fav-vc-safe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favourites" id="fav-nav-item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fav-vc-fr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="300"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="113"/>
+        <image name="heart.fill" catalog="system" width="128" height="113"/>
+        <image name="trophy" catalog="system" width="128" height="113"/>
+        <image name="trophy.fill" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
