@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 How to use this APIService:\
+\
+Task \{\
+\
+    do \{\
+\
+        let sports = try await NetworkManager.shared.fetchSports()\
+\
+        print(sports)\
+\
+    \} catch \{\
+\
+        print(error)\
+    \}\
+\}\
+\
+\
+Response:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs36 \cf0 [SportX.Team(team_key: Optional(80), team_name: Optional("Manchester City"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/80_manchester-city.jpg")), SportX.Team(team_key: Optional(84), team_name: Optional("Liverpool"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/84_liverpool.jpg")), SportX.Team(team_key: Optional(88), team_name: Optional("Chelsea"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/88_chelsea.jpg")), SportX.Team(team_key: Optional(102), team_name: Optional("Manchester United"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/102_manchester-united.jpg")), SportX.Team(team_key: Optional(141), team_name: Optional("Arsenal FC"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/141_arsenal-fc.jpg")), SportX.Team(team_key: Optional(164), team_name: Optional("Tottenham Hotspur"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/164_tottenham-hotspur.jpg")), SportX.Team(team_key: Optional(3071), team_name: Optional("AFC Bournemouth"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3071_afc-bournemouth.jpg")), SportX.Team(team_key: Optional(3073), team_name: Optional("Everton"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3073_everton.jpg")), SportX.Team(team_key: Optional(3075), team_name: Optional("Burnley"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3075_burnley.jpg")), SportX.Team(team_key: Optional(3077), team_name: Optional("Wolverhampton Wanderers"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3077_wolverhampton-wanderers.jpg")), SportX.Team(team_key: Optional(3079), team_name: Optional("Brighton & Hove Albion"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3079_brighton--hove-albion.jpg")), SportX.Team(team_key: Optional(3081), team_name: Optional("West Ham United"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3081_west-ham-united.jpg")), SportX.Team(team_key: Optional(3085), team_name: Optional("Fulham"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3085_fulham.jpg")), SportX.Team(team_key: Optional(3086), team_name: Optional("Brentford"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3086_brentford.jpg")), SportX.Team(team_key: Optional(3088), team_name: Optional("Aston Villa"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3088_aston-villa.jpg")), SportX.Team(team_key: Optional(3089), team_name: Optional("Nottingham Forest"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3089_nottingham-forest.jpg")), SportX.Team(team_key: Optional(3100), team_name: Optional("Newcastle United"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3100_newcastle-united.jpg")), SportX.Team(team_key: Optional(3103), team_name: Optional("Leeds United"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3103_leeds-united.jpg")), SportX.Team(team_key: Optional(3111), team_name: Optional("Sunderland"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3111_sunderland.jpg")), SportX.Team(team_key: Optional(3429), team_name: Optional("Crystal Palace"), team_logo: Optional("https://apiv2.allsportsapi.com/logo/3429_crystal-palace.jpg"))]
+\f0\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Task \{\
+\
+    do \{\
+\
+        let teams = try await NetworkManager.shared\
+            .fetchTeams(\
+                sport: "football",\
+                leagueId: 152\
+            )\
+\
+        print(teams)\
+\
+    \} catch \{\
+\
+        print(error)\
+    \}\
+\}\
+\
+\
+\
+\
+Task \{\
+\
+    do \{\
+\
+        let fixtures = try await NetworkManager.shared\
+            .fetchFixtures(\
+                sport: "football",\
+                leagueId: 152\
+            )\
+\
+        print(fixtures)\
+\
+    \} catch \{\
+\
+        print(error)\
+    \}\
+\}\
+\
+\
+}
